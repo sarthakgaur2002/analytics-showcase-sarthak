@@ -11,13 +11,23 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/#about" },
-    { name: "Projects", href: "/#projects" },
-    { name: "Experience", href: "/#experience" },
-    { name: "Contact", href: "/#contact" },
-  ];
+  const handleDownloadResume = () => {
+    // Create a link element
+    const link = document.createElement('a');
+    link.href = '/resume-sarthak-gaur.pdf';
+    link.download = 'Sarthak-Gaur-Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const scrollToSection = (id: string) => {
+    setIsMenuOpen(false);
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
@@ -32,16 +42,37 @@ const Navbar = () => {
           {/* Desktop navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.href}
-                  className="text-gray-600 hover:text-accent px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
-                >
-                  {link.name}
-                </Link>
-              ))}
-              <Button variant="outline" size="sm" className="flex items-center ml-4 border-accent text-accent hover:bg-accent/10">
+              <a 
+                onClick={() => scrollToSection('home')}
+                className="text-gray-600 hover:text-accent px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 cursor-pointer"
+              >
+                Home
+              </a>
+              <a
+                onClick={() => scrollToSection('about')}
+                className="text-gray-600 hover:text-accent px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 cursor-pointer"
+              >
+                About
+              </a>
+              <a
+                onClick={() => scrollToSection('projects')}
+                className="text-gray-600 hover:text-accent px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 cursor-pointer"
+              >
+                Projects
+              </a>
+              <a
+                onClick={() => scrollToSection('experience')}
+                className="text-gray-600 hover:text-accent px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 cursor-pointer"
+              >
+                Experience
+              </a>
+              <a
+                onClick={() => scrollToSection('contact')}
+                className="text-gray-600 hover:text-accent px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 cursor-pointer"
+              >
+                Contact
+              </a>
+              <Button variant="outline" size="sm" className="flex items-center ml-4 border-accent text-accent hover:bg-accent/10" onClick={handleDownloadResume}>
                 <Download className="mr-1 h-4 w-4" /> Resume
               </Button>
             </div>
@@ -67,17 +98,37 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-white py-2 px-4 shadow-lg">
           <div className="flex flex-col space-y-2">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.href}
-                onClick={() => setIsMenuOpen(false)}
-                className="text-gray-600 hover:text-accent px-3 py-2 rounded-md text-base font-medium"
-              >
-                {link.name}
-              </Link>
-            ))}
-            <Button variant="outline" size="sm" className="flex items-center justify-center border-accent text-accent hover:bg-accent/10">
+            <a
+              onClick={() => scrollToSection('home')}
+              className="text-gray-600 hover:text-accent px-3 py-2 rounded-md text-base font-medium cursor-pointer"
+            >
+              Home
+            </a>
+            <a
+              onClick={() => scrollToSection('about')}
+              className="text-gray-600 hover:text-accent px-3 py-2 rounded-md text-base font-medium cursor-pointer"
+            >
+              About
+            </a>
+            <a
+              onClick={() => scrollToSection('projects')}
+              className="text-gray-600 hover:text-accent px-3 py-2 rounded-md text-base font-medium cursor-pointer"
+            >
+              Projects
+            </a>
+            <a
+              onClick={() => scrollToSection('experience')}
+              className="text-gray-600 hover:text-accent px-3 py-2 rounded-md text-base font-medium cursor-pointer"
+            >
+              Experience
+            </a>
+            <a
+              onClick={() => scrollToSection('contact')}
+              className="text-gray-600 hover:text-accent px-3 py-2 rounded-md text-base font-medium cursor-pointer"
+            >
+              Contact
+            </a>
+            <Button variant="outline" size="sm" className="flex items-center justify-center border-accent text-accent hover:bg-accent/10" onClick={handleDownloadResume}>
               <Download className="mr-1 h-4 w-4" /> Resume
             </Button>
           </div>

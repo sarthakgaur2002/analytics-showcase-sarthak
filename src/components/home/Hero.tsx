@@ -6,6 +6,23 @@ import { Link } from "react-router-dom";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const Hero = () => {
+  const handleDownloadResume = () => {
+    // Create a link element
+    const link = document.createElement('a');
+    link.href = '/resume-sarthak-gaur.pdf';
+    link.download = 'Sarthak-Gaur-Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="py-20 md:py-28 bg-gradient-to-b from-primary/10 to-secondary/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -21,12 +38,17 @@ const Hero = () => {
               Turning data into actionable business insights
             </p>
             <div className="mt-10 flex gap-4">
-              <Button asChild className="bg-accent hover:bg-accent/90">
-                <Link to="/#contact" className="flex items-center">
-                  Get in touch <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
+              <Button 
+                className="bg-accent hover:bg-accent/90"
+                onClick={scrollToContact}
+              >
+                Get in touch <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
-              <Button variant="outline" className="flex items-center border-accent text-accent hover:bg-accent/10">
+              <Button 
+                variant="outline" 
+                className="flex items-center border-accent text-accent hover:bg-accent/10"
+                onClick={handleDownloadResume}
+              >
                 <Download className="mr-2 h-4 w-4" /> Download Resume
               </Button>
             </div>
