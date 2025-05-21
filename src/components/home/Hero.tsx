@@ -24,17 +24,17 @@ const Hero = () => {
   };
 
   return (
-    <section className="py-20 md:py-28 bg-gradient-to-b from-primary/10 to-secondary/20">
+    <section className="py-20 md:py-28 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col-reverse md:flex-row items-center justify-between">
           <div className="text-left md:w-3/5 mt-8 md:mt-0">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 tracking-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tight">
               Sarthak Gaur
             </h1>
-            <p className="mt-3 text-xl md:text-2xl text-primary font-semibold">
+            <p className="mt-3 text-xl md:text-2xl text-accent font-semibold">
               Data Analyst | Business Analytics Professional
             </p>
-            <p className="mt-4 max-w-2xl text-lg md:text-xl text-gray-600">
+            <p className="mt-4 max-w-2xl text-lg md:text-xl text-gray-300">
               Turning data into actionable business insights
             </p>
             <div className="mt-10 flex gap-4">

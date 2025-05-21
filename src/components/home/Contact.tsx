@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Linkedin, Mail } from "lucide-react";
+import { Linkedin, Mail, MessageSquare, Phone, MapPin } from "lucide-react";
 import { toast } from "@/components/ui/sonner";
 
 const Contact = () => {
@@ -17,26 +17,26 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-16 bg-gray-50">
+    <section id="contact" className="py-16 dark:bg-gray-900 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900">Contact Me</h2>
-          <div className="mt-2 h-1 w-20 bg-primary mx-auto"></div>
-          <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Contact Me</h2>
+          <div className="mt-2 h-1 w-20 bg-accent mx-auto"></div>
+          <p className="mt-4 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Feel free to reach out if you'd like to discuss potential opportunities or have any questions.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <Card className="col-span-2 shadow-md">
+          <Card className="col-span-2 shadow-md dark:bg-gray-800 dark:border-gray-700">
             <CardHeader>
-              <CardTitle>Send Me a Message</CardTitle>
+              <CardTitle className="dark:text-white">Send Me a Message</CardTitle>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <label htmlFor="name" className="text-sm font-medium">
+                    <label htmlFor="name" className="text-sm font-medium text-left block dark:text-gray-300">
                       Your Name
                     </label>
                     <Input
@@ -44,10 +44,11 @@ const Contact = () => {
                       name="name"
                       placeholder="Enter your name"
                       required
+                      className="dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                     />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="email" className="text-sm font-medium">
+                    <label htmlFor="email" className="text-sm font-medium text-left block dark:text-gray-300">
                       Your Email
                     </label>
                     <Input
@@ -56,11 +57,12 @@ const Contact = () => {
                       type="email"
                       placeholder="Enter your email"
                       required
+                      className="dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                     />
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="subject" className="text-sm font-medium">
+                  <label htmlFor="subject" className="text-sm font-medium text-left block dark:text-gray-300">
                     Subject
                   </label>
                   <Input
@@ -68,10 +70,11 @@ const Contact = () => {
                     name="subject"
                     placeholder="Enter subject"
                     required
+                    className="dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                   />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium">
+                  <label htmlFor="message" className="text-sm font-medium text-left block dark:text-gray-300">
                     Message
                   </label>
                   <Textarea
@@ -80,40 +83,51 @@ const Contact = () => {
                     placeholder="Enter your message here..."
                     rows={5}
                     required
+                    className="dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                   />
                 </div>
-                <Button type="submit" className="w-full md:w-auto">
+                <Button type="submit" className="w-full md:w-auto bg-accent hover:bg-accent/90">
                   Send Message
                 </Button>
               </form>
             </CardContent>
           </Card>
 
-          <Card className="h-fit shadow-md">
+          <Card className="h-fit shadow-md dark:bg-gray-800 dark:border-gray-700">
             <CardHeader>
-              <CardTitle>Connect With Me</CardTitle>
+              <CardTitle className="dark:text-white text-left">Connect With Me</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div>
-                <h3 className="text-lg font-medium mb-2">Email</h3>
+              <div className="text-left">
+                <h3 className="text-lg font-medium mb-2 dark:text-gray-200">Email</h3>
                 <a
                   href="mailto:sarthakgaur2002@gmail.com"
-                  className="flex items-center gap-2 text-primary hover:underline"
+                  className="flex items-center gap-2 text-primary hover:underline dark:text-accent"
                 >
                   <Mail className="h-5 w-5" />
-                  sarthakgaur2002@gmail.com
+                  <span>sarthakgaur2002@gmail.com</span>
                 </a>
               </div>
-              <div>
-                <h3 className="text-lg font-medium mb-2">LinkedIn</h3>
+              <div className="text-left">
+                <h3 className="text-lg font-medium mb-2 dark:text-gray-200">LinkedIn</h3>
                 <a
                   href="https://linkedin.com/in/sarthakgaur2002"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-primary hover:underline"
+                  className="flex items-center gap-2 text-primary hover:underline dark:text-accent"
                 >
                   <Linkedin className="h-5 w-5" />
-                  linkedin.com/in/sarthakgaur2002
+                  <span>linkedin.com/in/sarthakgaur2002</span>
+                </a>
+              </div>
+              <div className="text-left">
+                <h3 className="text-lg font-medium mb-2 dark:text-gray-200">Phone</h3>
+                <a
+                  href="tel:+917701997081"
+                  className="flex items-center gap-2 text-primary hover:underline dark:text-accent"
+                >
+                  <Phone className="h-5 w-5" />
+                  <span>+91 7701997081</span>
                 </a>
               </div>
             </CardContent>
