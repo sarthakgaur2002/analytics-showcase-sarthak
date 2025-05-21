@@ -24,7 +24,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
-            <Link to="/" className="text-xl font-semibold text-primary">
+            <Link to="/" className="text-xl font-semibold text-accent">
               Sarthak Gaur
             </Link>
           </div>
@@ -36,12 +36,12 @@ const Navbar = () => {
                 <Link
                   key={link.name}
                   to={link.href}
-                  className="text-gray-600 hover:text-primary px-3 py-2 rounded-md text-sm font-medium"
+                  className="text-gray-600 hover:text-accent px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
                 >
                   {link.name}
                 </Link>
               ))}
-              <Button variant="outline" size="sm" className="flex items-center ml-4">
+              <Button variant="outline" size="sm" className="flex items-center ml-4 border-accent text-accent hover:bg-accent/10">
                 <Download className="mr-1 h-4 w-4" /> Resume
               </Button>
             </div>
@@ -51,7 +51,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-primary hover:bg-gray-100"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-accent hover:bg-gray-100"
             >
               {isMenuOpen ? (
                 <X className="h-6 w-6" aria-hidden="true" />
@@ -72,12 +72,12 @@ const Navbar = () => {
                 key={link.name}
                 to={link.href}
                 onClick={() => setIsMenuOpen(false)}
-                className="text-gray-600 hover:text-primary px-3 py-2 rounded-md text-base font-medium"
+                className="text-gray-600 hover:text-accent px-3 py-2 rounded-md text-base font-medium"
               >
                 {link.name}
               </Link>
             ))}
-            <Button variant="outline" size="sm" className="flex items-center justify-center">
+            <Button variant="outline" size="sm" className="flex items-center justify-center border-accent text-accent hover:bg-accent/10">
               <Download className="mr-1 h-4 w-4" /> Resume
             </Button>
           </div>

@@ -3,30 +3,42 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Download } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const Hero = () => {
   return (
-    <section className="py-20 md:py-28 bg-gradient-to-b from-white to-gray-50">
+    <section className="py-20 md:py-28 bg-gradient-to-b from-primary/10 to-secondary/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 tracking-tight">
-            Sarthak Gaur
-          </h1>
-          <p className="mt-3 text-xl md:text-2xl text-primary font-semibold">
-            Data Analyst | Business Analytics Professional
-          </p>
-          <p className="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-gray-600">
-            Turning data into actionable business insights
-          </p>
-          <div className="mt-10 flex justify-center gap-4">
-            <Button asChild>
-              <Link to="/#contact" className="flex items-center">
-                Get in touch <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-            <Button variant="outline" className="flex items-center">
-              <Download className="mr-2 h-4 w-4" /> Download Resume
-            </Button>
+        <div className="flex flex-col-reverse md:flex-row items-center justify-between">
+          <div className="text-left md:w-3/5 mt-8 md:mt-0">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 tracking-tight">
+              Sarthak Gaur
+            </h1>
+            <p className="mt-3 text-xl md:text-2xl text-primary font-semibold">
+              Data Analyst | Business Analytics Professional
+            </p>
+            <p className="mt-4 max-w-2xl text-lg md:text-xl text-gray-600">
+              Turning data into actionable business insights
+            </p>
+            <div className="mt-10 flex gap-4">
+              <Button asChild className="bg-accent hover:bg-accent/90">
+                <Link to="/#contact" className="flex items-center">
+                  Get in touch <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              <Button variant="outline" className="flex items-center border-accent text-accent hover:bg-accent/10">
+                <Download className="mr-2 h-4 w-4" /> Download Resume
+              </Button>
+            </div>
+          </div>
+          <div className="md:w-2/5 flex justify-center md:justify-end">
+            <div className="relative">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-accent to-secondary blur-md opacity-50 -z-10 scale-110"></div>
+              <Avatar className="h-64 w-64 border-4 border-white shadow-xl">
+                <AvatarImage src="/lovable-uploads/3cca0ceb-6523-4e46-9e78-5e7bdc488c50.png" alt="Sarthak Gaur" />
+                <AvatarFallback>SG</AvatarFallback>
+              </Avatar>
+            </div>
           </div>
         </div>
       </div>

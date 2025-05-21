@@ -42,7 +42,7 @@ export default {
 					foreground: 'hsl(var(--muted-foreground))'
 				},
 				accent: {
-					DEFAULT: '#088395', // Darker teal
+					DEFAULT: '#FF9F29', // Vibrant orange/yellow
 					foreground: 'hsl(var(--accent-foreground))'
 				},
 				popover: {
