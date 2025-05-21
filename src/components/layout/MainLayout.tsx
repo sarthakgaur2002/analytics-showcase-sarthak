@@ -24,7 +24,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 dark:text-gray-100">
-      <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
+      <Navbar isDarkModeState={[isDarkMode, setIsDarkMode]} />
       <main id="home" className="flex-1">{children}</main>
       <Footer />
     </div>
