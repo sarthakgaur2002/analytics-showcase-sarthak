@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -12,13 +11,7 @@ const Navbar = () => {
   };
 
   const handleDownloadResume = () => {
-    // Create a link element
-    const link = document.createElement('a');
-    link.href = '/resume-sarthak-gaur.pdf';
-    link.download = 'Sarthak-Gaur-Resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    window.open('https://drive.google.com/file/d/1daUbPOtXHeYpHuZstN57pQdBXlA2M8gd/view?usp=sharing', '_blank');
   };
 
   const scrollToSection = (id: string) => {

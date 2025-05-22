@@ -13,18 +13,21 @@ const About = () => {
         
         <Card className="shadow-md hover:shadow-lg transition-shadow duration-300 dark:bg-gray-800 dark:border-gray-700">
           <CardContent className="pt-6 text-left">
-            <h3 className="text-xl font-semibold mb-4 dark:text-white">Professional Summary</h3>
             <p className="text-gray-700 dark:text-gray-300 mb-4">
-              I'm a data-driven Business Analytics Professional with experience at PlanetSpark, Qurex, and Infeedo, 
-              focused on turning complex data into actionable insights that drive business outcomes.
+              I'm a Business Analytics Professional with 1+ years of experience at PlanetSpark, Qurex, and Infeedo, where I specialize in transforming raw data into business growth stories.
             </p>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
-              My expertise lies in automating data pipelines, creating insightful business intelligence dashboards, 
-              and implementing marketing analytics solutions that lead to measurable business impact.
-            </p>
+            
+            <h3 className="text-xl font-semibold mb-3 dark:text-white">My expertise includes:</h3>
+            
+            <ul className="list-disc pl-5 mb-4 text-gray-700 dark:text-gray-300 space-y-2">
+              <li>3+ automated data pipelines built end-to-end</li>
+              <li>10+ impactful business intelligence dashboards created</li>
+              <li>250+ marketing metrics analyzed to drive results</li>
+            </ul>
+            
             <p className="text-gray-700 dark:text-gray-300">
-              I approach analytics challenges collaboratively, with a results-oriented mindset and 
-              a commitment to delivering insights that support strategic decision-making.
+              I thrive in collaborative teams, using data-driven insights to empower decision-makers and achieve measurable outcomes. 
+              My focus: making complex data simple, actionable, and a real driver of success.
             </p>
           </CardContent>
         </Card>
