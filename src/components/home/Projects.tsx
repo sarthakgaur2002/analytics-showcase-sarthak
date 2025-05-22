@@ -43,8 +43,32 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-16 bg-gray-900 dark:bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="py-16 bg-gray-900 dark:bg-gray-900 relative">
+      {/* Background visualization elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Abstract graph background */}
+        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+        
+        {/* Data visualization decorative elements */}
+        <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-accent/5 to-transparent"></div>
+        <div className="absolute bottom-0 right-0 w-full h-32 bg-gradient-to-t from-accent/5 to-transparent"></div>
+        
+        {/* Chart lines */}
+        <svg className="absolute bottom-0 left-0 w-full h-32 opacity-10" viewBox="0 0 1440 120" preserveAspectRatio="none">
+          <path 
+            d="M0,120 C240,100 480,0 720,50 C960,100 1200,0 1440,80 L1440,140 L0,140 Z" 
+            fill="url(#accent-gradient)" 
+          />
+          <defs>
+            <linearGradient id="accent-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="var(--accent)" stopOpacity="0.3" />
+              <stop offset="100%" stopColor="var(--secondary)" stopOpacity="0.3" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-white">Projects</h2>
           <div className="mt-2 h-1 w-20 bg-accent mx-auto"></div>

@@ -1,17 +1,30 @@
 
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
+import { ChartBar } from "lucide-react";
 
 const About = () => {
   return (
-    <section id="about" className="py-16 dark:bg-gray-900 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-16 dark:bg-gray-900 bg-white relative">
+      {/* Subtle background elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-[20%] right-[5%] w-32 h-32 rounded-full border border-accent/10 opacity-20"></div>
+        <div className="absolute bottom-[15%] left-[5%] w-24 h-24 rounded-full border border-accent/10 opacity-10"></div>
+        <div className="absolute top-[10%] left-[10%] w-40 h-40 bg-accent/5 rounded-full blur-3xl"></div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white">About Me</h2>
           <div className="mt-2 h-1 w-20 bg-accent mx-auto"></div>
         </div>
         
-        <Card className="shadow-md hover:shadow-lg transition-shadow duration-300 dark:bg-gray-800 dark:border-gray-700">
+        <Card className="shadow-md hover:shadow-lg transition-shadow duration-300 dark:bg-gray-800 dark:border-gray-700 relative overflow-hidden">
+          {/* Decorative chart icon */}
+          <div className="absolute -right-5 -bottom-5 opacity-5">
+            <ChartBar size={120} />
+          </div>
+          
           <CardContent className="pt-6 text-left">
             <p className="text-gray-700 dark:text-gray-300 mb-4">
               I'm a Business Analytics Professional with 1+ years of experience at PlanetSpark, Qurex, and Infeedo, where I specialize in transforming raw data into business growth stories.

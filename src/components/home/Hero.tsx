@@ -18,8 +18,40 @@ const Hero = () => {
   };
 
   return (
-    <section className="py-20 md:py-28 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 md:py-28 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
+      {/* Background visualization elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Abstract data chart lines */}
+        <div className="absolute top-[10%] left-[5%] w-[30%] h-[1px] bg-accent/20 animate-pulse"></div>
+        <div className="absolute top-[15%] left-[5%] w-[45%] h-[1px] bg-accent/15 animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+        <div className="absolute top-[20%] left-[5%] w-[35%] h-[1px] bg-accent/20 animate-pulse" style={{ animationDelay: '0.7s' }}></div>
+        <div className="absolute top-[25%] left-[5%] w-[50%] h-[1px] bg-accent/10 animate-pulse" style={{ animationDelay: '1.2s' }}></div>
+        
+        {/* Data nodes */}
+        <div className="absolute top-[10%] left-[5%] w-2 h-2 rounded-full bg-accent/40"></div>
+        <div className="absolute top-[15%] left-[5%] w-2 h-2 rounded-full bg-accent/40"></div>
+        <div className="absolute top-[20%] left-[5%] w-2 h-2 rounded-full bg-accent/40"></div>
+        <div className="absolute top-[25%] left-[5%] w-2 h-2 rounded-full bg-accent/40"></div>
+        
+        {/* Background grid */}
+        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+        
+        {/* Floating data circles */}
+        <div className="absolute top-[70%] right-[10%] w-16 h-16 rounded-full border border-accent/20 opacity-20 animate-pulse"></div>
+        <div className="absolute top-[30%] right-[15%] w-24 h-24 rounded-full border border-secondary/20 opacity-10 animate-pulse" style={{ animationDelay: '0.8s' }}></div>
+        <div className="absolute top-[50%] right-[20%] w-12 h-12 rounded-full border border-primary/20 opacity-15 animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+        
+        {/* Data visualization bars */}
+        <div className="absolute bottom-[10%] left-[60%] flex items-end space-x-1">
+          <div className="w-1 h-8 bg-accent/10 rounded-t"></div>
+          <div className="w-1 h-12 bg-accent/15 rounded-t"></div>
+          <div className="w-1 h-6 bg-accent/10 rounded-t"></div>
+          <div className="w-1 h-16 bg-accent/20 rounded-t"></div>
+          <div className="w-1 h-10 bg-accent/15 rounded-t"></div>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col-reverse md:flex-row items-center justify-between">
           <div className="text-left md:w-3/5 mt-8 md:mt-0">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tight">
