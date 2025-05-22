@@ -2,7 +2,7 @@
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { School, BookOpen, Trophy, Certificate, Lightbulb } from "lucide-react";
+import { School, BookOpen, Trophy, Award, Lightbulb } from "lucide-react";
 
 const Education = () => {
   const courses = [
@@ -39,7 +39,7 @@ const Education = () => {
         {/* Education-themed icons */}
         <BookOpen className="absolute top-[15%] right-[20%] h-16 w-16 text-accent/5" />
         <Trophy className="absolute bottom-[20%] left-[15%] h-14 w-14 text-accent/5" />
-        <Certificate className="absolute top-[30%] left-[50%] h-12 w-12 text-accent/5" />
+        <Award className="absolute top-[30%] left-[50%] h-12 w-12 text-accent/5" />
         <Lightbulb className="absolute bottom-[30%] right-[15%] h-14 w-14 text-accent/5" />
         
         {/* Animated gradient */}
@@ -98,7 +98,7 @@ const Education = () => {
           <Card className="shadow-md hover:shadow-lg transition-shadow duration-300 dark:bg-gray-800 dark:border-gray-700 relative overflow-hidden">
             {/* Decorative elements */}
             <div className="absolute -right-4 -bottom-4 opacity-5">
-              <Certificate size={100} />
+              <Award size={100} />
             </div>
             
             <div className="absolute top-0 right-0 w-20 h-20 bg-accent/5 rounded-bl-full"></div>
@@ -114,7 +114,7 @@ const Education = () => {
             <CardContent>
               <div className="mb-6">
                 <div className="flex items-center mb-3">
-                  <Certificate className="h-4 w-4 mr-2 text-accent" />
+                  <Award className="h-4 w-4 mr-2 text-accent" />
                   <h4 className="text-md font-semibold dark:text-gray-200 text-left">Professional Certifications:</h4>
                 </div>
                 <ul className="list-disc pl-5 space-y-2 text-gray-700 dark:text-gray-300 text-left">
