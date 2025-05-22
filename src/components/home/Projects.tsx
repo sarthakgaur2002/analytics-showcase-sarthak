@@ -15,6 +15,7 @@ const Projects = () => {
       outcome: "Led to the discontinuation of 100+ ads and 20 underperforming campaigns, saving approximately $1M.",
       tools: ["Power BI", "SQL", "Metabase", "APIs", "Data Analysis"],
       icon: <ChartBar className="h-8 w-8 text-accent" />,
+      githubLink: null,
     },
     {
       id: 2,
@@ -23,6 +24,7 @@ const Projects = () => {
       outcome: "Reduced data errors by 25% and leveraged statistical analysis and visualization (Seaborn, Matplotlib) to identify key trends in app ratings and reviews.",
       tools: ["Python", "Pandas", "Seaborn", "Matplotlib", "Data Cleaning"],
       icon: <FileText className="h-8 w-8 text-accent" />,
+      githubLink: "https://github.com/sarthakgaur2002/Play-store-dataset",
     },
     {
       id: 3,
@@ -31,6 +33,7 @@ const Projects = () => {
       outcome: "Designed and developed a comprehensive data model and dashboard, enabling real-time insights and supporting informed decision-making.",
       tools: ["Power BI", "Data Modeling", "Data Transformation", "Dashboarding"],
       icon: <ChartBar className="h-8 w-8 text-accent" />,
+      githubLink: "https://github.com/sarthakgaur2002/AdventureWorks-Dashboard",
     },
     {
       id: 4,
@@ -39,6 +42,7 @@ const Projects = () => {
       outcome: "Designed and deployed an interactive Power BI dashboard, providing real-time visualizations of critical market metrics to support strategic decision-making.",
       tools: ["Python", "SQL", "Power BI", "Data Pipelines"],
       icon: <Database className="h-8 w-8 text-accent" />,
+      githubLink: null,
     },
   ];
 
@@ -108,9 +112,16 @@ const Projects = () => {
                 </div>
               </CardContent>
               <CardFooter className="bg-gray-800/50 border-t border-gray-700">
-                <Button variant="ghost" size="sm" className="ml-auto text-accent hover:text-white hover:bg-gray-700">
-                  View Details <ArrowRight className="ml-1 h-4 w-4" />
-                </Button>
+                {project.githubLink && (
+                  <Button 
+                    variant="ghost" 
+                    size="sm" 
+                    className="ml-auto text-accent hover:text-white hover:bg-gray-700"
+                    onClick={() => window.open(project.githubLink, '_blank')}
+                  >
+                    View Details <ArrowRight className="ml-1 h-4 w-4" />
+                  </Button>
+                )}
               </CardFooter>
             </Card>
           ))}
