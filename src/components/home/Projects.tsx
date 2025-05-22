@@ -2,7 +2,7 @@
 import React from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ChartBar, FileText, Database, ArrowRight } from "lucide-react";
+import { ChartBar, FileText, Database, ArrowRight, BarChart3, LineChart, PieChart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Projects = () => {
@@ -16,6 +16,7 @@ const Projects = () => {
       tools: ["Power BI", "SQL", "Metabase", "APIs", "Data Analysis"],
       icon: <ChartBar className="h-8 w-8 text-accent" />,
       githubLink: null,
+      visual: <BarChart3 className="h-20 w-20 text-accent/10 absolute right-4 bottom-4" />,
     },
     {
       id: 2,
@@ -25,6 +26,7 @@ const Projects = () => {
       tools: ["Python", "Pandas", "Seaborn", "Matplotlib", "Data Cleaning"],
       icon: <FileText className="h-8 w-8 text-accent" />,
       githubLink: "https://github.com/sarthakgaur2002/Play-store-dataset",
+      visual: <LineChart className="h-20 w-20 text-accent/10 absolute right-4 bottom-4" />,
     },
     {
       id: 3,
@@ -34,6 +36,7 @@ const Projects = () => {
       tools: ["Power BI", "Data Modeling", "Data Transformation", "Dashboarding"],
       icon: <ChartBar className="h-8 w-8 text-accent" />,
       githubLink: "https://github.com/sarthakgaur2002/AdventureWorks-Dashboard",
+      visual: <PieChart className="h-20 w-20 text-accent/10 absolute right-4 bottom-4" />,
     },
     {
       id: 4,
@@ -43,12 +46,13 @@ const Projects = () => {
       tools: ["Python", "SQL", "Power BI", "Data Pipelines"],
       icon: <Database className="h-8 w-8 text-accent" />,
       githubLink: null,
+      visual: <BarChart3 className="h-20 w-20 text-accent/10 absolute right-4 bottom-4" />,
     },
   ];
 
   return (
     <section id="projects" className="py-16 bg-gray-900 dark:bg-gray-900 relative">
-      {/* Background visualization elements */}
+      {/* Enhanced background visualization elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Abstract graph background */}
         <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
@@ -70,6 +74,16 @@ const Projects = () => {
             </linearGradient>
           </defs>
         </svg>
+
+        {/* Animated data points */}
+        <div className="absolute left-1/4 top-1/3 w-2 h-2 bg-accent/30 rounded-full animate-pulse"></div>
+        <div className="absolute left-3/4 top-1/2 w-2 h-2 bg-accent/30 rounded-full animate-pulse" style={{ animationDelay: "0.5s" }}></div>
+        <div className="absolute left-1/2 top-1/4 w-2 h-2 bg-accent/30 rounded-full animate-pulse" style={{ animationDelay: "1s" }}></div>
+        <div className="absolute left-2/3 top-2/3 w-2 h-2 bg-accent/30 rounded-full animate-pulse" style={{ animationDelay: "1.5s" }}></div>
+        
+        {/* Animated data connections */}
+        <div className="absolute left-1/4 top-1/3 w-[200px] h-[1px] bg-accent/10 rotate-45 origin-left"></div>
+        <div className="absolute left-3/4 top-1/2 w-[150px] h-[1px] bg-accent/10 -rotate-30 origin-left"></div>
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -85,8 +99,11 @@ const Projects = () => {
           {projects.map((project) => (
             <Card 
               key={project.id} 
-              className="overflow-hidden border-gray-700 bg-gray-800 hover:shadow-lg hover:shadow-accent/20 transition-all duration-300"
+              className="overflow-hidden border-gray-700 bg-gray-800 hover:shadow-lg hover:shadow-accent/20 transition-all duration-300 relative"
             >
+              {/* Visual element */}
+              {project.visual}
+              
               <CardHeader className="border-b border-gray-700 bg-gray-800/70 flex flex-row items-center gap-4">
                 <div className="bg-gray-900 p-3 rounded-lg shadow-inner shadow-accent/20">
                   {project.icon}

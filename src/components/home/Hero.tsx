@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight, Download, BarChart, LineChart, PieChart, TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
@@ -18,7 +18,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="py-20 md:py-28 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
+    <section className="py-20 md:py-28 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 light:from-white light:via-gray-50 light:to-gray-100 relative overflow-hidden">
       {/* Background visualization elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Abstract data chart lines */}
@@ -41,13 +41,26 @@ const Hero = () => {
         <div className="absolute top-[30%] right-[15%] w-24 h-24 rounded-full border border-secondary/20 opacity-10 animate-pulse" style={{ animationDelay: '0.8s' }}></div>
         <div className="absolute top-[50%] right-[20%] w-12 h-12 rounded-full border border-primary/20 opacity-15 animate-pulse" style={{ animationDelay: '1.5s' }}></div>
         
-        {/* Data visualization bars */}
+        {/* Data visualization elements */}
         <div className="absolute bottom-[10%] left-[60%] flex items-end space-x-1">
           <div className="w-1 h-8 bg-accent/10 rounded-t"></div>
           <div className="w-1 h-12 bg-accent/15 rounded-t"></div>
           <div className="w-1 h-6 bg-accent/10 rounded-t"></div>
           <div className="w-1 h-16 bg-accent/20 rounded-t"></div>
           <div className="w-1 h-10 bg-accent/15 rounded-t"></div>
+        </div>
+
+        {/* Enhanced visual elements */}
+        <LineChart className="absolute top-[5%] right-[5%] h-12 w-12 text-accent/10" />
+        <BarChart className="absolute bottom-[15%] left-[10%] h-16 w-16 text-accent/10" />
+        <PieChart className="absolute top-[40%] right-[25%] h-10 w-10 text-accent/10" />
+        <TrendingUp className="absolute bottom-[30%] left-[30%] h-12 w-12 text-accent/10" />
+
+        {/* Data flow animation */}
+        <div className="absolute top-[50%] left-[40%] w-64 h-64">
+          <div className="absolute w-1 h-1 bg-accent/30 rounded-full animate-data-flow"></div>
+          <div className="absolute w-1 h-1 bg-accent/30 rounded-full animate-data-flow" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute w-1 h-1 bg-accent/30 rounded-full animate-data-flow" style={{ animationDelay: '2s' }}></div>
         </div>
       </div>
 

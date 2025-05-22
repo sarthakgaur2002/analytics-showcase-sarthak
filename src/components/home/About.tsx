@@ -1,16 +1,31 @@
 
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { ChartBar } from "lucide-react";
+import { ChartBar, LineChart, BarChart, PieChart, TrendingUp, Database, Code } from "lucide-react";
 
 const About = () => {
   return (
     <section id="about" className="py-16 dark:bg-gray-900 bg-white relative">
-      {/* Subtle background elements */}
+      {/* Enhanced visual background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Floating circles */}
         <div className="absolute top-[20%] right-[5%] w-32 h-32 rounded-full border border-accent/10 opacity-20"></div>
         <div className="absolute bottom-[15%] left-[5%] w-24 h-24 rounded-full border border-accent/10 opacity-10"></div>
         <div className="absolute top-[10%] left-[10%] w-40 h-40 bg-accent/5 rounded-full blur-3xl"></div>
+        
+        {/* Data visualization icons */}
+        <BarChart className="absolute bottom-[10%] left-[15%] h-16 w-16 text-accent/5" />
+        <LineChart className="absolute top-[15%] right-[10%] h-14 w-14 text-accent/5" />
+        <PieChart className="absolute bottom-[20%] right-[20%] h-12 w-12 text-accent/5" />
+        <TrendingUp className="absolute top-[40%] left-[5%] h-10 w-10 text-accent/5" />
+        <Database className="absolute bottom-[30%] right-[5%] h-12 w-12 text-accent/5" />
+        <Code className="absolute top-[20%] left-[20%] h-10 w-10 text-accent/5" />
+        
+        {/* Grid pattern */}
+        <div className="absolute inset-0 bg-grid-pattern opacity-[0.03]"></div>
+        
+        {/* Animated gradient */}
+        <div className="absolute -bottom-20 -right-20 w-60 h-60 bg-gradient-to-tr from-accent/5 to-transparent rounded-full blur-3xl"></div>
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -23,6 +38,13 @@ const About = () => {
           {/* Decorative chart icon */}
           <div className="absolute -right-5 -bottom-5 opacity-5">
             <ChartBar size={120} />
+          </div>
+          
+          {/* Enhanced visual elements */}
+          <div className="absolute top-5 right-5 flex gap-2">
+            <div className="w-2 h-8 bg-accent/10 rounded-t"></div>
+            <div className="w-2 h-6 bg-accent/10 rounded-t"></div>
+            <div className="w-2 h-10 bg-accent/10 rounded-t"></div>
           </div>
           
           <CardContent className="pt-6 text-left">
