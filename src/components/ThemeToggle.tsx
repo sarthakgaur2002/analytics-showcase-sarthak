@@ -14,14 +14,14 @@ const ThemeToggle: React.FC<ThemeToggleProps> = ({ isDarkMode, setIsDarkMode }) 
   };
 
   return (
-    <div className="flex items-center gap-2">
-      <Sun className={`h-4 w-4 ${!isDarkMode ? "text-accent" : "text-gray-400"}`} />
+    <div className="flex items-center gap-2 h-6">
+      <Sun className={`h-4 w-4 ${!isDarkMode ? "text-accent" : "text-gray-400"} transition-colors duration-300`} />
       <Switch 
         checked={isDarkMode} 
         onCheckedChange={handleToggleTheme}
-        className="data-[state=checked]:bg-accent"
+        className="data-[state=checked]:bg-accent transition-all duration-300"
       />
-      <Moon className={`h-4 w-4 ${isDarkMode ? "text-accent" : "text-gray-400"}`} />
+      <Moon className={`h-4 w-4 ${isDarkMode ? "text-accent" : "text-gray-400"} transition-colors duration-300`} />
     </div>
   );
 };

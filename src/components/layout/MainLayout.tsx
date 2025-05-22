@@ -10,6 +10,7 @@ interface MainLayoutProps {
 
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   const [isDarkMode, setIsDarkMode] = useState(true); // Default to dark mode
+  const [isChanging, setIsChanging] = useState(false);
 
   useEffect(() => {
     // Reset scroll position when the component mounts
@@ -20,16 +21,25 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
     if (savedTheme) {
       setIsDarkMode(savedTheme === "dark");
     }
+  }, []);
+
+  useEffect(() => {
+    // Apply dark mode class with a small delay to prevent layout shifts
+    setIsChanging(true);
     
-    // Apply dark mode class
-    if (isDarkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
+    const timer = setTimeout(() => {
+      if (isDarkMode) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      
+      // Save theme preference
+      localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+      setIsChanging(false);
+    }, 100);
     
-    // Save theme preference
-    localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+    return () => clearTimeout(timer);
   }, [isDarkMode]);
 
   return (
